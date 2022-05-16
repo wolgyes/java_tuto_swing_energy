@@ -1,8 +1,6 @@
 package managgers;
 
-import enums.OilType;
 import gui.MainWindow;
-import managgers.CompanyMangger;
 import models.Company;
 import models.Oil;
 import models.Water;
@@ -18,16 +16,16 @@ import java.util.UUID;
  */
 public class App {
 
-    public static CompanyMangger companyMangger = new CompanyMangger();
+    public static CompanyManger companyMangger = new CompanyManger();
 
     static class XmlManagger {
         static File xmlFile = new File("Companies.xml");
 
         public static void xmlLoad() {
             try {
-                JAXBContext jc = JAXBContext.newInstance(CompanyMangger.class);
+                JAXBContext jc = JAXBContext.newInstance(CompanyManger.class);
                 Unmarshaller unmarshaller = jc.createUnmarshaller();
-                companyMangger = (CompanyMangger) unmarshaller.unmarshal(xmlFile);
+                companyMangger = (CompanyManger) unmarshaller.unmarshal(xmlFile);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
@@ -35,7 +33,7 @@ public class App {
 
         public static void xmlWrite() {
             try {
-                JAXBContext context = JAXBContext.newInstance(CompanyMangger.class);
+                JAXBContext context = JAXBContext.newInstance(CompanyManger.class);
                 Marshaller marsh = context.createMarshaller();
                 marsh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 

@@ -19,6 +19,11 @@ public class MainWindow extends JFrame {
     private JPanel contentPane;
     private JComponent content;
 
+    /**
+     * Construcor for the main window.
+     *
+     * Create the main window and initialize the components.
+     */
     public MainWindow(){
         // Set the basic properties of the window
         super(TITLE);
@@ -39,6 +44,9 @@ public class MainWindow extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Initialize the components of the window.
+     */
     private void initComponents() {
         // Set the basic layout
         setLayout(null);
@@ -65,6 +73,12 @@ public class MainWindow extends JFrame {
         setContentPane(contentPane);
     }
 
+    /**
+     * Set the content of the main window.
+     *
+     * Currently, it's unused, in the future it will be used to change the content of the main window.
+     * @param newContent The new content of the main window.
+     */
     public void setContent(JComponent newContent){
         if(content != null) contentPane.remove(content);
 
@@ -75,6 +89,10 @@ public class MainWindow extends JFrame {
         contentPane.add(content);
     }
 
+    /**
+     * Get the content of the main window.
+     * @return The content of the main window.
+     */
     public JComponent getContent(){
         return content;
     }

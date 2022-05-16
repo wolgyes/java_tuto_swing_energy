@@ -12,14 +12,26 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * <h2>Main Panel class</h2>
+ *
+ * By using the JPanel class, this class creates the main panel of the application.
+ *
+ * @see JPanel
+ */
 public class MainPanel extends JPanel {
 
+    /**
+     * Constructor
+     */
     public MainPanel() {
         initComponents();
     }
 
+    /**
+     * This method is called from within the constructor to initialize the form.
+     */
     private void initComponents() {
         setLayout(null);
 
@@ -110,6 +122,10 @@ public class MainPanel extends JPanel {
 
     }
 
+    /**
+     * Updates the JList of the companies
+     * @return the JList of the companies
+     */
     private DefaultListModel<Company> UpdateCompanyList(){
         // Createing a new listModel
         DefaultListModel<Company> listModel = new DefaultListModel<>();

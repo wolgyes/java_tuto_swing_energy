@@ -10,7 +10,16 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 /**
- * Header panel for the application.
+ * <h2>Header panel for the application.</h2>
+ *
+ * <p>
+ *     By using the JPanel class, we create a header panel that is used to display<br/><br/>
+ *     With the MouseListener and MouseMotionListener, we create a draggable window.<br/>
+ * </p>
+ *
+ * @see JPanel
+ * @see MouseListener
+ * @see MouseMotionListener
  */
 public class HeaderPanel extends JPanel implements MouseListener, MouseMotionListener {
 
@@ -21,6 +30,8 @@ public class HeaderPanel extends JPanel implements MouseListener, MouseMotionLis
 
     /**
      * Constructor.
+     *
+     * @param mainWindow The main window.
      */
     public HeaderPanel(MainWindow mainWindow) {
         super();

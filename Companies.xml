@@ -62,15 +62,6 @@
                             <cleanliness>20</cleanliness>
                         </value>
                     </entry>
-                    <entry>
-                        <key>fbdb4bd8-e82c-4702-b32b-93f8fdc0c2f1</key>
-                        <value>
-                            <type>Teszt 2</type>
-                            <liter>35</liter>
-                            <literprice>60</literprice>
-                            <cleanliness>15</cleanliness>
-                        </value>
-                    </entry>
                 </waters>
             </value>
         </entry>

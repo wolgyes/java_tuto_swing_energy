@@ -4,6 +4,8 @@ import enums.OilType;
 import gui.MainWindow;
 import gui.templates.borders.RoundBorder;
 import gui.templates.buttons.JRoundButton;
+import gui.templates.renderers.OilRenderer;
+import gui.templates.renderers.WaterRenderer;
 import managgers.App;
 import models.Company;
 import models.Oil;
@@ -77,6 +79,7 @@ public class CompanyInfoPanel extends JPanel {
         oilList.setFont(oilList.getFont().deriveFont(16f));
         oilList.setForeground(Color.WHITE);
         oilList.setBackground(new Color(8, 12, 19, 255));
+        oilList.setCellRenderer(new OilRenderer());
 
         JScrollPane oilListScroll = new JScrollPane(oilList);
         oilListScroll.setBounds(5, 195, (MainWindow.WIDTH-360-5) / 2, MainWindow.HEIGHT-165-150);
@@ -98,6 +101,7 @@ public class CompanyInfoPanel extends JPanel {
         waterList.setFont(waterList.getFont().deriveFont(16f));
         waterList.setForeground(Color.WHITE);
         waterList.setBackground(new Color(8, 12, 19, 255));
+        waterList.setCellRenderer(new WaterRenderer());
 
         JScrollPane waterListScroll = new JScrollPane(waterList);
         waterListScroll.setBounds((MainWindow.WIDTH-360-5) / 2 + 10, 195, (MainWindow.WIDTH-360-5) / 2 - 10, MainWindow.HEIGHT-165-150);
@@ -321,6 +325,10 @@ public class CompanyInfoPanel extends JPanel {
         add(removeWaterButton);
     }
 
+    /**
+     * Updates the oil list.
+     * @return The updated oil list.
+     */
     private DefaultListModel<Oil> UpdateOilList(){
         // Createing a new listModel
         DefaultListModel<Oil> listModel = new DefaultListModel<>();
@@ -347,6 +355,10 @@ public class CompanyInfoPanel extends JPanel {
         return listModel;
     }
 
+    /**
+     * Updates the water list.
+     * @return The updated water list.
+     */
     private DefaultListModel<Water> UpdateWaterList(){
         // Createing a new listModel
         DefaultListModel<Water> listModel = new DefaultListModel<>();
@@ -373,23 +385,21 @@ public class CompanyInfoPanel extends JPanel {
         return listModel;
     }
 
+    /**
+     * Set the company and companyId.
+     * @param company The company.
+     * @param companyId The company id.
+     */
     public void setCompany(Company company, UUID companyId) {
         this.company = company;
         this.companyId = companyId;
 
-
-
         if(company != null) {
-            System.out.println("Company: " + company.getName());
-            System.out.println("CompanyId: " + companyId);
-
             companyName.setText(company.getName());
             oilList.setModel(UpdateOilList());
             waterList.setModel(UpdateWaterList());
             setVisible(true);
         }else{
-            System.out.println("Company: null");
-            System.out.println("CompanyId: null");
             setVisible(false);
         }
     }
