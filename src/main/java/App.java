@@ -1,3 +1,4 @@
+import gui.MainWindow;
 import managgers.CompanyMangger;
 import models.Company;
 import models.Oil;
@@ -18,7 +19,6 @@ import java.util.UUID;
 public class App {
 
     public static CompanyMangger companyMangger = new CompanyMangger();
-    public GUI application = new GUI();
 
     static class XmlManagger {
         static File xmlFile = new File("Companies.xml");
@@ -54,21 +54,9 @@ public class App {
         }
     }
 
-    class GUI extends JFrame implements ActionListener {
-
-        public void setup(){
-            setSize(400,400);
-            setVisible(true);
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
     void run(){
         XmlManagger.xmlLoad();
-        application.setup();
+        new MainWindow();
     }
 
     // ========================

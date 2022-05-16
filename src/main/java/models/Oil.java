@@ -1,11 +1,9 @@
 package models;
 
+import enums.OilType;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-
-enum OilType {
-    C1, C2, A2, D, E, F, G,H
-}
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Oil extends FossilProduct {
