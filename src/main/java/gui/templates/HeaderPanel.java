@@ -6,13 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 /**
  * Header panel for the application.
  */
-public class HeaderPanel extends JPanel {
+public class HeaderPanel extends JPanel implements MouseListener, MouseMotionListener {
 
     private MainWindow mainWindow;
+
+    private boolean isDragged = false;
+    private Point lastClickedPosition;
 
     /**
      * Constructor.
@@ -23,6 +28,9 @@ public class HeaderPanel extends JPanel {
         this.mainWindow = mainWindow;
         setBackground(new Color(7, 8, 12,255));
         setBounds(0, 0, MainWindow.WIDTH, 30);
+
+        addMouseListener(this);
+        addMouseMotionListener(this);
 
         initComponents();
     }
@@ -84,4 +92,51 @@ public class HeaderPanel extends JPanel {
         });
         add(minimizeButton);
     }
+
+    //#region Mouse Listener section
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        isDragged = true;
+
+        lastClickedPosition = e.getLocationOnScreen();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        isDragged = false;
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        if(isDragged){
+            Point currentPosition = e.getLocationOnScreen();
+
+            int x = currentPosition.x - lastClickedPosition.x;
+            int y = currentPosition.y - lastClickedPosition.y;
+
+            mainWindow.setLocation(mainWindow.getX() + x, mainWindow.getY() + y);
+
+            lastClickedPosition = currentPosition;
+        }
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
+    }
+    //#endregion
 }
