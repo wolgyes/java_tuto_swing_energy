@@ -64,15 +64,15 @@ public class App {
     // ||   ADDING METHODS   ||
     // ========================
 
-    static void addCompany(Company company){
+    public static void addCompany(Company company){
         companyMangger.addCompany(company);
         XmlManagger.xmlWrite();
     }
-    static void addWater(Company company, Water water){
+    public static void addWater(Company company, Water water){
         company.addWater(water);
         XmlManagger.xmlWrite();
     }
-    static void addOil(Company company, Oil oil){
+    public static void addOil(Company company, Oil oil){
         company.addOil(oil);
         XmlManagger.xmlWrite();
     }
@@ -82,15 +82,15 @@ public class App {
     // ||   REMOVE METHODS   ||
     // ========================
 
-    static void removeCompany(Company company){
+    public static void removeCompany(Company company){
         companyMangger.getCompanies().values().remove(company);
         XmlManagger.xmlWrite();
     }
-    static void removeWater(Company company, UUID waterUUID){
+    public static void removeWater(Company company, UUID waterUUID){
         company.removeWater(waterUUID);
         XmlManagger.xmlWrite();
     }
-    static void removeOil(Company company, UUID oilUUID){
+    public static void removeOil(Company company, UUID oilUUID){
         company.removeOil(oilUUID);
         XmlManagger.xmlWrite();
     }
@@ -100,16 +100,16 @@ public class App {
     // ||   CHOOSING METHODS   ||
     // ===========================
 
-    static Company chooseCompany(UUID uuid){
+    public static Company chooseCompany(UUID uuid){
         return companyMangger.getCompanies().get(uuid);
     }
 
-    static Oil chooseOil(UUID companyUUID, UUID oilUUID){
+    public static Oil chooseOil(UUID companyUUID, UUID oilUUID){
         Company company = chooseCompany(companyUUID);
         return company.getOils().get(oilUUID);
     }
 
-    static Water chooseTeacher(UUID companyUUID, UUID waterUUID){
+    public static Water chooseTeacher(UUID companyUUID, UUID waterUUID){
         Company company = chooseCompany(companyUUID);
         return company.getWaters().get(waterUUID);
     }

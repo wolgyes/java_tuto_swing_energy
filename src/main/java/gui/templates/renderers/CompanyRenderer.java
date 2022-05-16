@@ -1,7 +1,5 @@
 package gui.templates.renderers;
 
-import models.Company;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +12,11 @@ public class CompanyRenderer extends JLabel implements ListCellRenderer<String> 
     @Override
     public Component getListCellRendererComponent(JList<? extends String> list, String value, int index, boolean isSelected, boolean cellHasFocus) {
         setText(value);
+        setFont(new Font("Arial", Font.PLAIN, 16));
+
+        setHorizontalAlignment(CENTER);
+        setVerticalAlignment(CENTER);
+
         setForeground(Color.WHITE);
 
         if(isSelected){

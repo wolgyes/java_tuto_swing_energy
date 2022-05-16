@@ -2,20 +2,18 @@
 <CM>
     <companies>
         <entry>
-            <key>a5728159-c424-4b3d-ae07-3b6ef18c3eb7</key>
+            <key>c246856f-aeae-4192-ab00-30bb7d1a0731</key>
             <value>
                 <name>Company1</name>
-                <oils>
-                    <entry>
-                        <key>9b46cd65-e25f-4b6a-aff0-a36b150458a5</key>
-                        <value>
-                            <type>C1 Teszt</type>
-                            <liter>5</liter>
-                            <literprice>575</literprice>
-                            <oilType>C1</oilType>
-                        </value>
-                    </entry>
-                </oils>
+                <oils/>
+                <waters/>
+            </value>
+        </entry>
+        <entry>
+            <key>0ed4a5e6-098b-4d04-9525-b2adb3b5baca</key>
+            <value>
+                <name>Company0</name>
+                <oils/>
                 <waters/>
             </value>
         </entry>
