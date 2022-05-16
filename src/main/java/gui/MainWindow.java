@@ -1,6 +1,8 @@
 package gui;
 
-import gui.templates.HeaderPanel;
+import gui.templates.buttons.JRoundButton;
+import gui.templates.panels.HeaderPanel;
+import gui.templates.panels.MainPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +15,9 @@ public class MainWindow extends JFrame {
     public static final String TITLE = "Energetic Companies";
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
+
+    private JPanel contentPane;
+    private JComponent content;
 
     public MainWindow(){
         // Set the basic properties of the window
@@ -40,7 +45,7 @@ public class MainWindow extends JFrame {
         setUndecorated(true);
 
         // Create the content pane
-        JPanel contentPane = new JPanel();
+        contentPane = new JPanel();
         contentPane.setLayout(null);
         contentPane.setBounds(0, 0, WIDTH, HEIGHT);
 
@@ -53,8 +58,24 @@ public class MainWindow extends JFrame {
         HeaderPanel headerPanel = new HeaderPanel(this);
         contentPane.add(headerPanel);
 
+        // Create content panel
+        setContent(new MainPanel());
+
         // Set the content pane
         setContentPane(contentPane);
     }
 
+    public void setContent(JComponent newContent){
+        if(content != null) contentPane.remove(content);
+
+        content = newContent;
+        content.setBounds(0, HeaderPanel.HEIGHT, WIDTH, HEIGHT - HeaderPanel.HEIGHT);
+        content.setBackground(new Color(8, 12, 19, 255));
+
+        contentPane.add(content);
+    }
+
+    public JComponent getContent(){
+        return content;
+    }
 }

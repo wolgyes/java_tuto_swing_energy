@@ -1,4 +1,4 @@
-package gui.templates;
+package gui.templates.panels;
 
 import gui.MainWindow;
 

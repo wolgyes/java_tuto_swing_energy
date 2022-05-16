@@ -1,21 +1,21 @@
+package managgers;
+
+import enums.OilType;
 import gui.MainWindow;
 import managgers.CompanyMangger;
 import models.Company;
 import models.Oil;
 import models.Water;
 
-import javax.swing.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.Map;
-import java.util.Scanner;
 import java.util.UUID;
 
+/**
+ * managgers.App class is the actual main class of the application.
+ */
 public class App {
 
     public static CompanyMangger companyMangger = new CompanyMangger();
@@ -54,8 +54,9 @@ public class App {
         }
     }
 
-    void run(){
+    public void run(){
         XmlManagger.xmlLoad();
+
         new MainWindow();
     }
 

@@ -1,3 +1,5 @@
+import managgers.App;
+
 /**
  * <h3> Main class to run the program. </h3>
  *
@@ -14,7 +16,7 @@ class Main {
      * @param args we don't use this parameter
      */
     public static void main(String[] args) {
-        App app = new App();
+        App app = new managgers.App();
         app.run();
     }
 }
