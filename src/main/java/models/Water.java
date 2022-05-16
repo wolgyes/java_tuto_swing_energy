@@ -21,7 +21,7 @@ public class Water extends FossilProduct {
 
     @Override
     public String toString() {
-        return super.toString() + " " + this.cleanliness;
+        return super.toString() + " - " + this.cleanliness;
     }
 }
 

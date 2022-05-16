@@ -42,11 +42,11 @@ public class MainPanel extends JPanel {
         CompanyInfoPanel companyInformationPanel = new CompanyInfoPanel();
         companyInformationPanel.setLayout(null);
         companyInformationPanel.setBounds(355, 35, MainWindow.WIDTH - 360, MainWindow.HEIGHT-40);
-        companyInformationPanel.setCompany(null);
+        companyInformationPanel.setCompany(null, null);
         add(companyInformationPanel);
 
         // JList of the Companies
-        JList<String> jList = new JList<>(UpdateCompanyList());
+        JList<Company> jList = new JList<>(UpdateCompanyList());
         jList.setCellRenderer(new CompanyRenderer());
         jList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jList.setBackground(new Color(8, 12, 19, 255));
@@ -56,12 +56,15 @@ public class MainPanel extends JPanel {
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
                     Company selectedCompany = null;
+                    UUID selectedId = null;
+
                     for(Map.Entry<UUID, Company> entry : App.companyMangger.getCompanies().entrySet()) {
-                        if(entry.getValue().getName().equals(jList.getSelectedValue())) {
+                        if(entry.getValue().equals(jList.getSelectedValue())) {
                             selectedCompany = entry.getValue();
+                            selectedId = entry.getKey();
                         }
                     }
-                    companyInformationPanel.setCompany(selectedCompany);
+                    companyInformationPanel.setCompany(selectedCompany, selectedId);
                 }
             }
         });
@@ -82,23 +85,8 @@ public class MainPanel extends JPanel {
         removeCompanyButton.setBounds(5, 40, 190, 30);
         removeCompanyButton.addActionListener(e -> {
             if (jList.getSelectedIndex() != -1) {
-                String companyName = jList.getSelectedValue();
-
-                Company removeCompany = null;
-                for(Map.Entry<UUID, Company> entry : App.companyMangger.getCompanies().entrySet()){
-                    if(entry.getValue().getName().equals(companyName)){
-                        removeCompany = entry.getValue();
-                        break;
-                    }
-                }
-
-                if(removeCompany != null){
-                    App.removeCompany(removeCompany);
-                    jList.setModel(UpdateCompanyList());
-                    JOptionPane.showMessageDialog(this, "Company removed");
-                }else{
-                    JOptionPane.showMessageDialog(this, "Company not found");
-                }
+                App.removeCompany(jList.getSelectedValue());
+                jList.setModel(UpdateCompanyList());
             }else{
                 JOptionPane.showMessageDialog(this, "Please select a company!");
             }
@@ -122,20 +110,20 @@ public class MainPanel extends JPanel {
 
     }
 
-    private DefaultListModel<String> UpdateCompanyList(){
+    private DefaultListModel<Company> UpdateCompanyList(){
         // Createing a new listModel
-        DefaultListModel<String> listModel = new DefaultListModel<>();
+        DefaultListModel<Company> listModel = new DefaultListModel<>();
 
         // Adding the companies to the listModel
         App.companyMangger.getCompanies().forEach((k, v) -> {
-            listModel.addElement(v.getName());
+            listModel.addElement(v);
         });
 
         // Sort the listModel
         for (int i = 0; i < listModel.getSize(); i++) {
             for (int j = 0; j < listModel.getSize() - i - 1; j++) {
                 if (listModel.getElementAt(j).compareTo(listModel.getElementAt(j + 1)) > 0) {
-                    String temp = listModel.getElementAt(j);
+                    Company temp = listModel.getElementAt(j);
                     listModel.setElementAt(listModel.getElementAt(j + 1), j);
                     listModel.setElementAt(temp, j + 1);
                 }

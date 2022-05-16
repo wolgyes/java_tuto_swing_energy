@@ -5,16 +5,73 @@
             <key>c246856f-aeae-4192-ab00-30bb7d1a0731</key>
             <value>
                 <name>Company1</name>
-                <oils/>
+                <oils>
+                    <entry>
+                        <key>7849a6c5-9d78-4ead-8915-644ca659b77a</key>
+                        <value>
+                            <type>Teszt1</type>
+                            <liter>120</liter>
+                            <literprice>750</literprice>
+                            <oilType>E</oilType>
+                        </value>
+                    </entry>
+                </oils>
                 <waters/>
+            </value>
+        </entry>
+        <entry>
+            <key>506d449d-06a0-4b2f-a118-15face4a4ef0</key>
+            <value>
+                <name>Company2</name>
+                <oils/>
+                <waters>
+                    <entry>
+                        <key>1d8929b6-c626-4bbd-8ad5-89bd783b1fc8</key>
+                        <value>
+                            <type>Teszt 4 W</type>
+                            <liter>120</liter>
+                            <literprice>50</literprice>
+                            <cleanliness>100</cleanliness>
+                        </value>
+                    </entry>
+                </waters>
             </value>
         </entry>
         <entry>
             <key>0ed4a5e6-098b-4d04-9525-b2adb3b5baca</key>
             <value>
                 <name>Company0</name>
-                <oils/>
-                <waters/>
+                <oils>
+                    <entry>
+                        <key>59b8d8ab-849d-49c5-8b19-4710e18c6a5e</key>
+                        <value>
+                            <type>Teszt2</type>
+                            <liter>25</liter>
+                            <literprice>550</literprice>
+                            <oilType>D</oilType>
+                        </value>
+                    </entry>
+                </oils>
+                <waters>
+                    <entry>
+                        <key>ad8024e4-2054-49de-b402-76c3aeb202f1</key>
+                        <value>
+                            <type>Teszt 3 W</type>
+                            <liter>30</liter>
+                            <literprice>70</literprice>
+                            <cleanliness>20</cleanliness>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>fbdb4bd8-e82c-4702-b32b-93f8fdc0c2f1</key>
+                        <value>
+                            <type>Teszt 2</type>
+                            <liter>35</liter>
+                            <literprice>60</literprice>
+                            <cleanliness>15</cleanliness>
+                        </value>
+                    </entry>
+                </waters>
             </value>
         </entry>
     </companies>

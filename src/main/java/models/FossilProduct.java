@@ -29,6 +29,6 @@ abstract class FossilProduct {
     }
     @Override
     public String toString(){
-        return type +" "+ liter;
+        return type +" - "+ liter;
     }
 }

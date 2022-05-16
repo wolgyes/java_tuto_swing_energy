@@ -1,18 +1,18 @@
 package gui.templates.renderers;
 
-import models.Company;
+import models.Water;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class CompanyRenderer extends JLabel implements ListCellRenderer<Company> {
+public class WaterRenderer extends JLabel implements ListCellRenderer<Water> {
 
-    public CompanyRenderer() {
+    public WaterRenderer() {
         setOpaque(true);
     }
 
     @Override
-    public Component getListCellRendererComponent(JList<? extends Company> list, Company value, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(JList<? extends Water> list, Water value, int index, boolean isSelected, boolean cellHasFocus) {
         setText(value.toString());
         setFont(new Font("Arial", Font.PLAIN, 16));
 

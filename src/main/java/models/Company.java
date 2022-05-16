@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Company {
+public class Company implements Comparable<Company> {
     private String name;
 
     @XmlElement(name = "oils")
@@ -65,5 +65,10 @@ public class Company {
     @Override
     public String toString(){
         return this.name;
+    }
+
+    @Override
+    public int compareTo(Company o) {
+        return this.name.compareTo(o.name);
     }
 }

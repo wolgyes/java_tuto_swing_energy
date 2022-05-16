@@ -21,7 +21,7 @@ public class Oil extends FossilProduct {
 
     @Override
     public String toString() {
-        return super.toString() + " " + this.literprice;
+        return super.toString() + " - " + this.literprice;
     }
 }
 
