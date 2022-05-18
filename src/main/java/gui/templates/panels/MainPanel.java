@@ -3,7 +3,6 @@ package gui.templates.panels;
 import gui.MainWindow;
 import gui.templates.borders.RoundBorder;
 import gui.templates.buttons.JRoundButton;
-import gui.templates.renderers.CompanyRenderer;
 import gui.templates.renderers.ListRenderer;
 import managgers.App;
 import models.Company;
@@ -12,7 +11,8 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
-import java.util.*;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * <h2>Main Panel class</h2>

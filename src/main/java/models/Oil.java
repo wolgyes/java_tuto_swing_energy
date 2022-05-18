@@ -12,6 +12,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Oil extends FossilProduct {
+    /**
+     * Type of the oil!
+     *
+     * @see OilType
+     */
     OilType oilType;
 
     /**

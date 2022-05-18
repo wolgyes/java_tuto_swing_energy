@@ -4,8 +4,7 @@ import enums.OilType;
 import gui.MainWindow;
 import gui.templates.borders.RoundBorder;
 import gui.templates.buttons.JRoundButton;
-import gui.templates.renderers.OilRenderer;
-import gui.templates.renderers.WaterRenderer;
+import gui.templates.renderers.ListRenderer;
 import managgers.App;
 import models.Company;
 import models.Oil;
@@ -79,7 +78,7 @@ public class CompanyInfoPanel extends JPanel implements CustomPanel{
         oilList.setFont(oilList.getFont().deriveFont(16f));
         oilList.setForeground(Color.WHITE);
         oilList.setBackground(new Color(8, 12, 19, 255));
-        oilList.setCellRenderer(new OilRenderer());
+        oilList.setCellRenderer(new ListRenderer<>());
 
         JScrollPane oilListScroll = new JScrollPane(oilList);
         oilListScroll.setBounds(5, 195, (MainWindow.WIDTH-360-5) / 2, MainWindow.HEIGHT-165-150);
@@ -101,7 +100,7 @@ public class CompanyInfoPanel extends JPanel implements CustomPanel{
         waterList.setFont(waterList.getFont().deriveFont(16f));
         waterList.setForeground(Color.WHITE);
         waterList.setBackground(new Color(8, 12, 19, 255));
-        waterList.setCellRenderer(new WaterRenderer());
+        waterList.setCellRenderer(new ListRenderer<>());
 
         JScrollPane waterListScroll = new JScrollPane(waterList);
         waterListScroll.setBounds((MainWindow.WIDTH-360-5) / 2 + 10, 195, (MainWindow.WIDTH-360-5) / 2 - 10, MainWindow.HEIGHT-165-150);
