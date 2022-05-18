@@ -1,4 +1,4 @@
 # Energetic Companies
-## Created by Szabó Kristóf and Völgyes Viktor
+***Created by Szabó Kristóf and Völgyes Viktor***
 
-[a relative link](resources/index.html)
+[Javascript](resources/index.html){:target="_blank" rel="noopener"}
