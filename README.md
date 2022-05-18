@@ -19,4 +19,4 @@ hozzáadni és törölni.
 
 ## Linkek
 
-Java dokumentáció (javadoc): [javadoc](https://htmlpreview.github.io/?https://github.com/wolgyes/energetic_companies/tree/master/javadoc)
+Java dokumentáció (javadoc): [javadoc](javadoc/index.html)
