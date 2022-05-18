@@ -22,7 +22,7 @@ import java.util.UUID;
  * Company information panel.
  * it's shows the selected company information.
  */
-public class CompanyInfoPanel extends JPanel {
+public class CompanyInfoPanel extends JPanel implements CustomPanel{
 
     private Company company;
     private UUID companyId;
@@ -43,7 +43,7 @@ public class CompanyInfoPanel extends JPanel {
     /**
      * Initialize components.
      */
-    private void initComponents() {
+    public void initComponents() {
         // Create title label
         JLabel titleLabel = new JLabel("Company Information");
         titleLabel.setBounds(5, 5, MainWindow.WIDTH-360-5, 30);

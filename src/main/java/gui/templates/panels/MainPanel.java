@@ -4,6 +4,7 @@ import gui.MainWindow;
 import gui.templates.borders.RoundBorder;
 import gui.templates.buttons.JRoundButton;
 import gui.templates.renderers.CompanyRenderer;
+import gui.templates.renderers.ListRenderer;
 import managgers.App;
 import models.Company;
 
@@ -20,7 +21,7 @@ import java.util.*;
  *
  * @see JPanel
  */
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel implements CustomPanel {
 
     /**
      * Constructor
@@ -32,7 +33,9 @@ public class MainPanel extends JPanel {
     /**
      * This method is called from within the constructor to initialize the form.
      */
-    private void initComponents() {
+
+
+    public void initComponents() {
         setLayout(null);
 
         // Button panels
@@ -59,7 +62,7 @@ public class MainPanel extends JPanel {
 
         // JList of the Companies
         JList<Company> jList = new JList<>(UpdateCompanyList());
-        jList.setCellRenderer(new CompanyRenderer());
+        jList.setCellRenderer(new ListRenderer<>());
         jList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jList.setBackground(new Color(8, 12, 19, 255));
 

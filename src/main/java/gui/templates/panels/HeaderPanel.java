@@ -21,7 +21,7 @@ import java.awt.event.MouseMotionListener;
  * @see MouseListener
  * @see MouseMotionListener
  */
-public class HeaderPanel extends JPanel implements MouseListener, MouseMotionListener {
+public class HeaderPanel extends JPanel implements MouseListener, MouseMotionListener, CustomPanel {
 
     private MainWindow mainWindow;
 
@@ -49,7 +49,8 @@ public class HeaderPanel extends JPanel implements MouseListener, MouseMotionLis
     /**
      * Initializes the components.
      */
-    private void initComponents() {
+
+    public void initComponents() {
         setLayout(null);
 
         // Title
